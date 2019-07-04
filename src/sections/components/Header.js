@@ -1,16 +1,29 @@
 import React from 'react';
-import { Text, View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView, Image } from 'react-native';
 
 function Header(props) {
     return (
-        <View>
+        <View style={styles.container}>
             <SafeAreaView>
-                <Text>
-                    Este es el HEader
-                </Text>
+                <Image
+                    style={styles.logo}
+                    source={require('../../../assets/logo.png')} 
+                />
             </SafeAreaView>
          </View>
     );  
 }
+
+const styles = {
+    logo: {
+      width: 80,
+      height: 26,
+      resizeMode: 'contain'
+    },
+    container: {
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+    }
+  } 
 
 export default Header;
