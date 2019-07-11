@@ -19,7 +19,7 @@ const styles = {
         color: '#4c4c4c',
         fontSize: 20,
         marginBottom: 10,
-        fontWeigth: 'bold',
+        fontWeight: 'bold',
         marginLeft: 8
     }
 }
