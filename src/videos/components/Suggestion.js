@@ -73,7 +73,7 @@ const styles = {
         color: '#6b6b6b',
         fontSize: 14,
         fontWeigth: 'bold',
-    }
+    },
     
 }
 
