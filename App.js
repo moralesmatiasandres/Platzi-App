@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import Home from './src/screens/container/Home';
 import Header from './src/sections/components/Header';
 import SuggestionList from './src/videos/container/SuggestionList';
 import CategoryList from './src/videos/container/CategoryList';
 import API from './utils/Api';
+import Player from './src/player/container/Player';
 
 class App extends React.Component {
    state = {
@@ -26,6 +27,7 @@ class App extends React.Component {
     return (
       <Home>
         <Header />
+        <Player />
         <Text>Buscador</Text>
         <Text>Categorias</Text>
         <CategoryList 
