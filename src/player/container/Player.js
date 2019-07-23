@@ -11,6 +11,7 @@ import Layout from '../components/Layout';
 import ControlLayout from '../components/ControlLayout';
 import PlayPause from '../components/PlayPause';
 import FullScreen from '../components/FullScreen';
+import ProgressBar from '../components/ProgressBar';
 
 class Player extends Component {
     state = {
@@ -37,6 +38,14 @@ class Player extends Component {
     }
     onFullScreen = () => {
         this.player.presentFullscreenPlayer();
+    }
+    onChangeFinished = payload => {
+        this.player.seek(payload)
+        this.setState({ paused: false, loading: false })
+      }
+    
+      onChangeStarted = payload => {
+        this.setState({ paused: true, loading: true })
     }
 
     render() {
@@ -66,10 +75,15 @@ class Player extends Component {
                   controls={
                     <ControlLayout>
                       <PlayPause
-                        onPress={this.playPause}
-                        paused={this.state.paused}
+                            onPress={this.playPause}
+                            paused={this.state.paused}
                       />
-                      <Text>progress bar | </Text>
+                      <ProgressBar
+                            onChangeFinished={this.onChangeFinished}
+                            onChangeStarted={this.onChangeStarted} 
+                            progress={this.state.currentTime} 
+                            videoDuration={this.state.videoDuration} 
+                     />
                       <Text style={styles.progressTime}>{currentTime} / {totalTime}</Text>
                       <FullScreen onFullScreen={this.onFullScreen} />
                     </ControlLayout>

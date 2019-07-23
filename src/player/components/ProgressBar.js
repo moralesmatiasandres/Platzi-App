@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Slider from '@react-native-community/slider';
+import Slider from 'react-native-slider';
 
 function ProgressBar (props) {
     return (
@@ -11,7 +11,7 @@ function ProgressBar (props) {
                 onSlidingStart={props.onChangeStarted}
                 onSlidingComplete={props.onChangeFinished}
                 value={props.progress}
-                step={0.01}
+                step={1}
                 trackStyle={styles.trackStyle}
                 thumbStyle={styles.thumbStyle}
                 maximumTrackTintColor="rgba(255, 255, 255, .40)"
@@ -23,18 +23,18 @@ function ProgressBar (props) {
 }
 
 const styles = StyleSheet.create({
-    progress: {
-      width: '56%',
-    },
     thumbStyle: {
       width: 4,
       height: 30,
       borderRadius: 0,
       backgroundColor: 'white',
+      flex: 1,
     },
     trackStyle: {
       height: 30,
-      borderRadius: 0
+      width: 200,
+      borderRadius: 0,
+      flex: 1,
     }
   })
 
