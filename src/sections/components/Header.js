@@ -3,16 +3,21 @@ import { View, SafeAreaView, Image } from 'react-native';
 
 function Header(props) {
     return (
-        <View style={styles.container}>
-            <SafeAreaView>
-                <Image
-                    style={styles.logo}
-                    source={require('../../../assets/logo.png')} 
-                />
-            </SafeAreaView>
-         </View>
-    );  
-}
+      <View>
+        <SafeAreaView>
+          <View style={styles.container}>
+            <Image
+              source={require('../../../assets/logo.png')}
+              style={styles.logo}
+            />
+            <View style={styles.right}>
+              {props.children}
+            </View>
+          </View>
+        </SafeAreaView>
+      </View>
+    )
+  }
 
 const styles = {
     logo: {
@@ -23,6 +28,12 @@ const styles = {
     container: {
         paddingVertical: 10,
         paddingHorizontal: 10,
+        flexDirection: 'row',
+    },
+    right: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     }
   } 
 
