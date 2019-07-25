@@ -1,3 +1,4 @@
+
 const BASE_API = 'https://yts.am/api/v2/';
 
 class Api {
@@ -8,7 +9,14 @@ class Api {
   }
 
   async getMovies() {
-    const query = await fetch(`${BASE_API}list_movies.json`);
+    const query = await fetch(`${BASE_API}list_movies.json?`);
+    const { data } = await query.json();
+    return data.movies
+  }
+
+  async searchMovie(title) {
+    // el limit=1 tare una pelicula y el sort_by=rating trae la mas polular
+    const query = await fetch(`${BASE_API}list_movies.json?limit=1&sort_by=rating&query_term=${title}`);
     const { data } = await query.json();
     return data.movies
   }

@@ -1,10 +1,12 @@
 import React from 'react'
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, ScrollView } from 'react-native';
+import { WebView } from 'react-native-webview';
+
 
 export default function Details(props) {
     return (
         //  el titulo y la descripcion y la imagen vienen en el json de la Api
-        <View>
+        <ScrollView>
             <View style={styles.top}>
                 <Text>{props.title}</Text>
             </View>
@@ -16,8 +18,15 @@ export default function Details(props) {
                     />
                     <Text style={styles.description}>{props.description_full}</Text>
                 </View>
+                <View style={styles.trailer}>
+                  <WebView
+                    source={{
+                      uri:`https://www.youtube.com/embed/${props.yt_trailer_code}`
+                    }}
+                  />
+                </View>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -25,7 +34,7 @@ const styles = StyleSheet.create({
     container: {
     },
     trailer: {
-      height: 200,
+      height: 400,
     },
     details: {
       flexDirection: 'row',
