@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground } from 'react-native';
+import { Text, ImageBackground } from 'react-native';
 
 function CategoryListLayout(props) {
     return (

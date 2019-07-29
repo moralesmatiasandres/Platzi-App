@@ -1,7 +1,11 @@
 import React from 'react';
-import { View, Text, ImageBackground } from 'react-native';
+import { Text, ImageBackground } from 'react-native';
 
 function Category(props) {
+    
+    if( !props.genres ){
+        return null  // --- early return cuando no hay genero que mostrar
+    }
     return (
         <ImageBackground 
             style={styles.wrapper}
