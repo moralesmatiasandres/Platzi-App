@@ -102,7 +102,7 @@ const styles = {
         top: 0,
     },
     progressTime: {
-        color: 'black',
+        color: 'white',
         fontSize: 10,
         marginLeft: 5
     }

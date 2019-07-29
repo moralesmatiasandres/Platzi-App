@@ -23,7 +23,7 @@ function FullScreen(props) {
         right: 5
       }}
     >
-      <Icon color="black" name="md-expand" size={20}></Icon>
+      <Icon color="#7FB15F" name="md-expand" size={25}></Icon>
     </TouchableHighlight>
   )
 }

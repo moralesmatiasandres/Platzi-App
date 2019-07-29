@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     container: {
     },
     trailer: {
-      height: 400,
+      height: 200,
     },
     details: {
       flexDirection: 'row',

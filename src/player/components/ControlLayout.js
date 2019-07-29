@@ -11,6 +11,7 @@ function ControlLayout (props) {
 
 const styles = {
     container: {
+        backgroundColor: 'rgba(0,0,0,.5)',
         position: 'absolute',
         left: 0,
         right: 0,

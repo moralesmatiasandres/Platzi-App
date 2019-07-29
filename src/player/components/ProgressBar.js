@@ -23,18 +23,19 @@ function ProgressBar (props) {
 }
 
 const styles = StyleSheet.create({
+ 
+  
     thumbStyle: {
       width: 4,
       height: 30,
       borderRadius: 0,
       backgroundColor: 'white',
-      flex: 1,
     },
     trackStyle: {
       height: 30,
       width: 200,
       borderRadius: 0,
-      flex: 1,
+      
     }
   })
 
