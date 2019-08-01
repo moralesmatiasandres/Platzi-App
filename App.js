@@ -5,6 +5,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor} from './Store';
 import Loading from './src/sections/components/Loading'
 import AppLayout from './src/AppLayout';
+import AppNavigatorWithState from './src/AppNavigatorWithState'
+import AppNavigator from './src/AppNavigator'
 
 
 class App extends React.Component { 
@@ -17,7 +19,7 @@ class App extends React.Component {
           loading={<Loading />}
           persistor={persistor}
         >
-          <AppLayout />
+          <AppNavigatorWithState/>
         </PersistGate>
       </Provider>
     )

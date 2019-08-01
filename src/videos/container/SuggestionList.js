@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation'
 
 import Layout from '../components/SuggestionListLayout';
 import Empty from '../components/Empty';
@@ -19,6 +20,11 @@ class SuggestionList extends Component {
                 movie: item,
             }
         })
+        this.props.dispatch(
+            NavigationActions.navigate({
+                routeName: 'Movie'
+            })
+        )
     }
     renderItem = ({ item }) => {
         return (
@@ -46,7 +52,7 @@ class SuggestionList extends Component {
 
 function mapStateToProps(state) {
     return {
-        list: state.suggestionList
+        list: state.VideoReducer.suggestionList
     }
 }
 

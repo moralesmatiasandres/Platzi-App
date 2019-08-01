@@ -36,7 +36,7 @@ class CategoryList extends Component {
 
 function mapStateToProps(state) {
     return {
-        list: state.categoryList
+        list: state.VideoReducer.categoryList
     }
 }
 
