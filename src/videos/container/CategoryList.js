@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation'
 
 import Empty from '../components/Empty';
 import Separator from '../../sections/components/HorizontalSeparator';
@@ -11,9 +12,23 @@ class CategoryList extends Component {
     keyExtractor = (item) => item.id.toString()
     renderEmpty = () => <Empty text="No hay sugerencias" />
     itemSeparator = () => <Separator />
+    viewCategory = (item) => {
+        this.props.dispatch(
+            NavigationActions.navigate({
+                routeName: 'Category',
+                params: {
+                    genre: item.genres[0]
+                }
+            })
+        )
+    }
+    
     renderItem = ({ item }) => {
         return (
-            <Category {...item} />
+            <Category 
+                {...item}
+                onPress={() => { this.viewCategory(item) }} 
+            />
         )
     }
 

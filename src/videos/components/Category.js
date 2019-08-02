@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ImageBackground } from 'react-native';
+import { Text, ImageBackground, TouchableOpacity } from 'react-native';
 
 function Category(props) {
     
@@ -7,14 +7,18 @@ function Category(props) {
         return null  // --- early return cuando no hay genero que mostrar
     }
     return (
-        <ImageBackground 
-            style={styles.wrapper}
-            source={{
-                uri: props.background_image
-            }}
+        <TouchableOpacity
+            onPress={props.onPress}
         >
-            <Text style={styles.genre}>{props.genres[0]}</Text>
-        </ImageBackground>
+            <ImageBackground 
+                style={styles.wrapper}
+                source={{
+                    uri: props.background_image
+                }}
+            >
+                <Text style={styles.genre}>{props.genres[0]}</Text>
+            </ImageBackground>
+        </TouchableOpacity>
     )
 }
 
