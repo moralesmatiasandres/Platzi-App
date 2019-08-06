@@ -2,7 +2,8 @@ import React from 'react';
 import {
     createStackNavigator,
     createAppContainer,
-    createBottomTabNavigator
+    createBottomTabNavigator,
+    createSwitchNavigator
 } from 'react-navigation';
 
 import Home from './screens/container/Home';
@@ -12,6 +13,9 @@ import About from './screens/container/About';
 import Lucky from './screens/container/Lucky';
 import Profile from './screens/container/Profile';
 import Icon from './sections/components/Icon';
+import Login from './screens/container/Login';
+import Selector from './screens/container/Selector'
+
 
 const Main = createStackNavigator(
     {
@@ -49,4 +53,28 @@ const tabNavigator = createBottomTabNavigator(
     }
 )
 
-export default createAppContainer(tabNavigator);
+const Modal = createStackNavigator(
+    {
+        Main: {
+            screen: tabNavigator
+        },
+        Movie: Movie,
+    },
+    {
+        mode: 'modal',
+        headerMode: 'none'
+    }
+)
+
+const switchNavigator = createSwitchNavigator(
+    {
+        Selector: Selector,
+        App: Modal,
+        Login: Login,
+    },
+    {
+        initialRouteName: 'Selector'
+    }
+)
+
+export default createAppContainer(switchNavigator);

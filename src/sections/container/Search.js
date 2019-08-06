@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
 
 import API from '../../../utils/Api';
 
@@ -17,6 +18,11 @@ export class Search extends Component {
                 movie : movies[0]
             }
         })
+        this.props.dispatch(
+            NavigationActions.navigate({
+                routeName: 'Movie',
+            })
+        )
     }
     handleChangeText = (text) => {
         this.setState({
