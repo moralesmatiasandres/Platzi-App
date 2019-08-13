@@ -10,7 +10,6 @@ import Home from './screens/container/Home';
 import Movie from './screens/container/Movie';
 import Category from './screens/container/Category';
 import About from './screens/container/About';
-import Lucky from './screens/container/Lucky';
 import Profile from './screens/container/Profile';
 import Icon from './sections/components/Icon';
 import Login from './screens/container/Login';
@@ -38,9 +37,7 @@ const tabNavigator = createBottomTabNavigator(
         About: {
             screen: About,
         },
-        Lucky: {
-            screen: Lucky,
-        },
+        
         Profile: {
             screen: Profile,
         },
